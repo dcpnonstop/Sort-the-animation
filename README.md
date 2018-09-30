@@ -15,3 +15,9 @@
 <br>
 
 [第四种实现方式预览](https://dcpnonstop.github.io/Sort-the-animation/paixu3.html)
+
+---
+
+### 实现思路
+1. 通过排序把每一步的交换序列放入 sortDetail 中（后续位置会发生变化，所以要用 mapper 数组记录当前对应的是第几个元素）
+2. 用定时器的方式触发动画（我这里是通过改 marginLeft 属性，然后设置 transition）
