@@ -5,11 +5,12 @@
 
 <br>
 
-[第一种实现方式](https://dcpnonstop.github.io/Sort-the-animation/paixu.html)
+[第一种实现方式预览](https://dcpnonstop.github.io/Sort-the-animation/paixu.html)
 <br>
 
-[第二种实现方式](https://dcpnonstop.github.io/Sort-the-animation/paixu1.html)
+[第二种实现方式预览](https://dcpnonstop.github.io/Sort-the-animation/paixu1.html)
 <br>
 
-[第三种实现方式](https://dcpnonstop.github.io/Sort-the-animation/paixu2.html)
-
+[第三种实现方式预览](https://dcpnonstop.github.io/Sort-the-animation/paixu2.html)
+<br>
+[第四种实现方式预览](https://dcpnonstop.github.io/Sort-the-animation/paixu3.html)
