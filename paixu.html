@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+
+<head>
+<meta charset="utf-8">
+<style>
+#numList {
+display: flex;
+position: relative;
+flex-direction: row;
+}
+.numSingle {
+position: absolute;
+transition: 1s all;
+width: 30px;
+height: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid grey;
+}
+</style>
+</head>
+
+<body>
+
+<div id='numList' />
+
+
+<script>
+function loadList(arr) {
+var wrapper = document.getElementById('numList')
+for (var i = 0; i < arr.length; i++) {
+var newChild = document.createElement('div')
+newChild.innerText = arr[i]
+newChild.setAttribute('class', 'numSingle')
+newChild.style.marginLeft = 40 * i + "px"
+wrapper.appendChild(newChild)
+}
+}
+function getSortDetail(arr) {
+var mapper = []
+for (var i = 0; i < arr.length; i++)
+mapper[i] = i;
+console.log(mapper)
+var sortDetail = []
+for (var i = 1; i < arr.length; i++) {
+for (var j = arr.length - 1; j >= i; j--) {
+if (arr[j] < arr[j - 1]) {
+sortDetail.push([mapper[j], mapper[j - 1]])
+var temp = arr[j]
+arr[j] = arr[j - 1]
+arr[j - 1] = temp
+temp = mapper[j - 1]
+mapper[j - 1] = mapper[j]
+mapper[j] = temp
+console.log(mapper)
+}
+}
+}
+return sortDetail
+}
+
+function loadAnimation(sortDetail) {
+var i = 0
+var timeout = function () {
+setTimeout(function () {
+if (i >= sortDetail.length) {
+return
+} else {
+var childs = document.getElementsByClassName("numSingle")
+var j1 = sortDetail[i][0]
+var j2 = sortDetail[i][1]
+console.log(j1, j2)
+childs[j1].style.marginLeft = parseInt(childs[j1].style.marginLeft) - 40 + "px"
+childs[j2].style.marginLeft = parseInt(childs[j2].style.marginLeft) + 40 + "px"
+}
+timeout()
+i++
+}, 1000)
+}
+timeout()
+}
+
+function init() {
+var arr = [99,100,23,43,213,5,454,34354,7,68,7,8,9,8,98]
+loadList(arr)
+var sortDetail = getSortDetail(arr)
+loadAnimation(sortDetail)
+}
+
+init()
+</script>
+</body>

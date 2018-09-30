@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- ___    __    __      __    _  _  _  _
+/ __)  /__\  (  )    /__\  ( \/ )( \/ )
+( (_-. /(__)\  )(__  /(__)\  )  (  \  /
+\___/(__)(__)(____)(__)(__)(_/\_) (__)  -->
+ 
+<head>
+  <meta charset="utf-8">
+  <title>排序</title>
+  <meta name="author" content="galaxy-cst">
+  <style media="screen">
+    .num {
+      margin: 10px;
+      border-style: solid;
+      padding: 10px;
+      position: fixed;
+      transition: 0.5s;
+    }
+  </style>
+</head>
+ 
+<body>
+  <div id="anima">
+  </div>
+</body>
+ 
+<script type="text/javascript">
+  var arr = [52, 82, 22, 72, 12, 92, 11, 65, 17, 98, 59, 25, 15, 78, 30, 26, 45];
+  var index = [];
+  arr.forEach((e, i) => index[e] = i);
+  var anima = document.getElementById('anima');
+  // 初始化
+  html = '';
+  arr.forEach((e) => {
+    html += '<div class="num" id="' + e + '">' + e + '</div>';
+  });
+  anima.innerHTML = html;
+ 
+  var time = 1;
+ 
+  function sort(arra) {
+    var temp;
+    for (var i = 0; i < arra.length; i++) {
+      for (var j = 0; j < arra.length - i - 1; j++) {
+        if (arra[j] > arra[j + 1]) {
+          temp = arra[j];
+          arra[j] = arra[j + 1];
+          arra[j + 1] = temp;
+          (() => {
+            let array = arr.join().split(',');
+            setTimeout(() => {
+              array.forEach((e, i) => {
+                document.getElementById(e).style = 'left:' + i * 50 + 'px;';
+              });
+              console.log(array);
+            }, time * 500);
+          })();
+          time++;
+        }
+      }
+    };
+    return arra;
+  }
+  sort(arr);
+</script>
+ 
+</html>
