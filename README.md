@@ -78,6 +78,9 @@ for(let i = 0; i < len; i++ ){
 container.append(fragment);
 
 ```
+>至此，待排序元素输出到页面如下
+![图](https://raw.githubusercontent.com/dcpnonstop/Sort-the-animation/master/sort.jpg)
+
 ## 采用冒泡排序处理排序
 ```
 for(let i = 0; i < len; i++){
@@ -194,3 +197,8 @@ for(let i = 0; i < len; i++){
 </html>
 
 ```
+----
+
+<br>
+
+[在线预览](https://dcpnonstop.github.io/Sort-the-animation/paixu3.html)
